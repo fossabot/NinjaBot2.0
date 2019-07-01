@@ -341,7 +341,7 @@ client.guilds.find("id","585650653301440552").channels.find("name","suggestions"
 message.reply("Suggestion has been sent");
 console.log(`<@${message.author.id}> has used the suggest command in ${message.channel.guild} channel ${message.channel}`)
   }
-  if(command === "removerole") {
+  if(command === "roleremove") {
     message.delete().catch();
     if(!args[0] || args[0 == "help"]) return message.reply("Usage: phremoverole <@user> **rolename** ");
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry you dont have the permission to use this commands");
@@ -349,6 +349,26 @@ console.log(`<@${message.author.id}> has used the suggest command in ${message.c
     if(!rMember) return message.reply("Couldn't find that user");
     let role = args.join(" ").slice(22);
     if(!role) return message.reply("Specify a role boi");
+    let gRole = message.guild.roles.find(`name`, role);
+    if(!gRole) return message.reply("Couldn't find that role.");
+  
+    if(!rMember.roles.has(gRole.id)) return message.reply("They don't have that role.");
+    await(rMember.removeRole(gRole.id));
+  
+    try{
+      await rMember.send(`RIP, you lost the ${gRole.name} role.`)
+    }catch(e){
+      message.channel.send(`RIP to <@${rMember.id}>, We removed ${gRole.name} from them.`)
+  }
+}
+if(command === "rr") {
+    message.delete().catch();
+    if(!args[0] || args[0 == "help"]) return message.reply("Usage: phremoverole <@user> **rolename** ");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry you dont have the permission to use this commands");
+    let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+    if(!rMember) return message.reply("Umm, i Couldn't find that user :shrug: try again make sure you @mention them");
+    let role = args.join(" ").slice(22);
+    if(!role) return message.reply("Please specify a role to remove");
     let gRole = message.guild.roles.find(`name`, role);
     if(!gRole) return message.reply("Couldn't find that role.");
   
