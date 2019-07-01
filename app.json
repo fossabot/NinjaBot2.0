@@ -1,0 +1,16 @@
+{
+  "name": "Ninja Gen",
+  "description": "Discords #1 Gen Bot",
+  "keywords": [
+    "node",
+    "heroku",
+    "discord"
+	"tickets"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
