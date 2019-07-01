@@ -48,6 +48,7 @@ client.on("message", async message => {
 
 
   if(command === "ticketclose") {
+  message.delete().catch();	  
     if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
 
     message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`-confirm\`. This will time out in 10 seconds and be cancelled.`)
@@ -108,6 +109,7 @@ client.on("message", async message => {
   }
 
   if(command === "ping") {
+  message.delete().catch();	  
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
@@ -115,11 +117,12 @@ client.on("message", async message => {
   }
 	
 if(command === "invite") {
-   let hEmbed = new Discord.RichEmbed()
+  message.delete().catch();	
+   let iEmbed = new Discord.RichEmbed()
    .setTitle("Invite Ninja Bot")
    .setColor("0xff80ff")
    .addField("Invite Link", "[Invite Me Here](https://discordapp.com/api/oauth2/authorize?client_id=595155471611068426&permissions=2146958839&scope=bot)")
-   message.channel.send(hEmbed)
+   message.channel.send(iEmbed)
  }	
   
   if(command === "say") {
@@ -133,6 +136,7 @@ if(command === "invite") {
   }
   
   if(command === "kick") {
+  message.delete().catch();	  
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
@@ -161,6 +165,7 @@ if(command === "invite") {
   }
 
 	if (message.content.toLowerCase().startsWith(config.prefix + `remove`)) {
+  message.delete().catch();		
     if (!message.channel.name.startsWith(`ticket-`)) {
     const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
@@ -177,6 +182,7 @@ if(command === "invite") {
   }
 
 if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
+  message.delete().catch();	
     if (!message.channel.name.startsWith(`ticket-`)) {
     const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
@@ -194,6 +200,7 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
   }
   
   if(command === "ban") {
+  message.delete().catch();	  
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
     if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
@@ -214,6 +221,7 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
   }
   
   if(command === "purge") {
+  message.delete().catch();	  
     // This command removes all messages from all users in the channel, up to 100.
     
     // get the delete count, as an actual number.
@@ -229,6 +237,7 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
  if(command === "help") {
+  message.delete().catch();	 
    let hEmbed = new Discord.RichEmbed()
    .setTitle("Ninja Bot Commands")
    .setColor("0xff80ff")
@@ -248,12 +257,14 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
  }
 
 if(command === "foo") {
+    message.delete().catch();
     // Defines Foo From Bar
     const m = await message.channel.send("foo?");
     m.edit(`FOO BAR BITCH`);
 }
 
 if(command === "about") {
+   message.delete().catch();
    let aEmbed = new Discord.RichEmbed()
    .setTitle("About Ninja Bot")
    .setColor("0xff80ff")
