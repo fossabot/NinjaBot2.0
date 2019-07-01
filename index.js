@@ -113,6 +113,14 @@ client.on("message", async message => {
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
+	
+if(command === "invite") {
+   let hEmbed = new Discord.RichEmbed()
+   .setTitle("Invite Ninja Bot")
+   .setColor("0xff80ff")
+   .addField("Invite Link", "[Invite Me Here](https://discordapp.com/api/oauth2/authorize?client_id=595155471611068426&permissions=2146958839&scope=bot)")
+   message.channel.send(hEmbed)
+ }	
   
   if(command === "say") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
@@ -247,10 +255,10 @@ if(command === "foo") {
 
 if(command === "about") {
    let aEmbed = new Discord.RichEmbed()
-   .setTitle("About Placeholder")
+   .setTitle("About Ninja Bot")
    .setColor("0xff80ff")
-   .addField("Version", "1.0.0")
-   .addField("Author/s", "ツ 𝕿𝖞𝖑𝖊𝖗. 𝕳 ツ#9393")
+   .addField("Version", "Beta v1.00")
+   .addField("Author", "ツ 𝕿𝖞𝖑𝖊𝖗. 𝕳 ツ#9393")
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/BkGDvwa)")
    message.channel.send(aEmbed)
  }
