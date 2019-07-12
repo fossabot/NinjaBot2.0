@@ -325,6 +325,7 @@ if(command === "serverlist") {
   if(command === "suggest") {
     const sayMessage = args.join(" ");
     message.delete().catch();
+if(!args[0] || args[0 == "help"]) return message.reply("Usage: nb/suggest <What you want to suggest>");
 
 
     let sEmbed = new Discord.RichEmbed()
