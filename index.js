@@ -251,8 +251,8 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
    .addField("Removerole", "Removes the mentioned role from the mentioned user **nb/removerole @user @rolename**")
    .addField("Say", "Sends your provided message **nb/say <message>**")
    .addField("Purge", "Deletes the provided number of messages **nb/purge <number of messages>**")
-   .addField("new", "Opens a new support ticket **nb/new <reason>**")
-   .addField("close", "Closes a support ticket **nb/close <#ticketchannel>**  note you have to send this command inside of the ticket channel")
+   .addField("ticketcreate", "Opens a new support ticket **nb/new <reason>**")
+   .addField("ticketclose", "Closes a support ticket **nb/close <#ticketchannel>**  note you have to send this command inside of the ticket channel")
    message.channel.send(hEmbed)
  }
 
@@ -313,7 +313,7 @@ if(command === "serverlist") {
     let sicon = message.guild.iconURL;
     message.delete().catch();
 
-    if(!args[0] || args[0 == "help"]) return message.reply("Usage: phsendembed <Embed message>");
+    if(!args[0] || args[0 == "help"]) return message.reply("Usage: nb/sendembed <Embed message>");
   let embedMessage = new Discord.RichEmbed()
   
   .setDescription(Message)
@@ -343,7 +343,7 @@ console.log(`<@${message.author.id}> has used the suggest command in ${message.c
   }
   if(command === "roleremove") {
     message.delete().catch();
-    if(!args[0] || args[0 == "help"]) return message.reply("Usage: phremoverole <@user> **rolename** ");
+    if(!args[0] || args[0 == "help"]) return message.reply("Usage: nb/removerole <@user> **rolename** ");
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry you dont have the permission to use this commands");
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
     if(!rMember) return message.reply("Couldn't find that user");
@@ -363,7 +363,7 @@ console.log(`<@${message.author.id}> has used the suggest command in ${message.c
 }
 if(command === "rr") {
     message.delete().catch();
-    if(!args[0] || args[0 == "help"]) return message.reply("Usage: phremoverole <@user> **rolename** ");
+    if(!args[0] || args[0 == "help"]) return message.reply("Usage: nb/removerole <@user> **rolename** ");
     if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry you dont have the permission to use this commands");
     let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
     if(!rMember) return message.reply("Umm, i Couldn't find that user :shrug: try again make sure you @mention them");
