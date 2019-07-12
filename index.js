@@ -73,11 +73,11 @@ client.on("message", async message => {
   if(command === "ticketcreate") {
     const reason = message.content.split(" ").slice(1).join(" ");
     let nEmbed = new Discord.RichEmbed()
-    .setTitle("Support category not found")
+    .setTitle("Tickets category not found")
     .setColor(0xCF40FA)
     .setDescription("**There wasn't a tickets category so i created one! Please execute the command again to open your ticket**");
      message.delete().catch();
-    if (!message.guild.channels.exists("name", "tickets", "category")) return message.channel.send(nEmbed) .then(message.guild.createChannel("tickets", "category"));
+    if (!message.guild.channels.exists("name", "★★★★★★tickets★★★★★★", "category")) return message.channel.send(nEmbed) .then(message.guild.createChannel("★★★★★★tickets★★★★★★", "category"));
 
     if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
     if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
