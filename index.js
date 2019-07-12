@@ -337,7 +337,7 @@ if(command === "serverlist") {
 
 
 
-client.guilds.find("id","585650653301440552").channels.find("name","suggestions").send(sEmbed);
+client.guilds.find("id","586817026522218507").channels.find("name","suggestions").send(sEmbed);
 message.reply("Suggestion has been sent");
 console.log(`<@${message.author.id}> has used the suggest command in ${message.channel.guild} channel ${message.channel}`)
   }
