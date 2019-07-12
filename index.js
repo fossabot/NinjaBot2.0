@@ -84,7 +84,7 @@ client.on("message", async message => {
     message.guild.createChannel(`ticket-${message.author.id}`, "text",).then(c => {
         let role = message.guild.roles.find("name", "Support Team");
         let role2 = message.guild.roles.find("name", "@everyone");
-        let category = message.guild.channels.find(c => c.name == "tickets" && c.type == "category");
+        let category = message.guild.channels.find(c => c.name == "★★★★★★tickets★★★★★★" && c.type == "category");
         c.setParent(category);
         c.overwritePermissions(role, {
             SEND_MESSAGES: true,
