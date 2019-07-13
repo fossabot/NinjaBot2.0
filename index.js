@@ -240,7 +240,7 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
   message.delete().catch();	 
    let hEmbed = new Discord.RichEmbed()
    .setTitle("Ninja Bot Commands")
-   .setDescription("Required Fields: "{}", Not Required: "[]"")
+   .setDescription("``Required Fields`` {}, ``Not Required`` []")
    .setColor("0xff80ff")
    .addField("Kick", "Kicks the mentioned user ``nb/kick @User``")
    .addField("Ban", "Bans mentioned user ``nb/ban @user {Reason}")
