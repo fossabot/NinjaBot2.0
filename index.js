@@ -243,7 +243,7 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
    .setDescription("Below is a list of my commands and their usage.")
    .setColor("0xff80ff")
    .addField("Required", "``{}`` -> Required Filed")
-   .addField("Not Required", "``[] -> Not Required Field")
+   .addField("Not Required", "``[]`` -> Not Required Field")
    .addField("Kick", "Kicks the mentioned user ``nb/kick @User``")
    .addField("Ban", "Bans mentioned user ``nb/ban @user {Reason}``")
    .addField("Serverlist", "Shows a list of guilds the bots in")
