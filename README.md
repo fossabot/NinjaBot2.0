@@ -1,4 +1,4 @@
-[![Build Passing](https://img.shields.io/badge/build-Passing%20-brightgreen.svg?style=flat)](https://github.com/sp0kl/placeholder2.0/) [![Status Online](https://img.shields.io/badge/status-Offline%20-red.svg?style=flat)](https://github.com/sp0kl/placeholder2.0/) [![Bot Code Library](https://img.shields.io/badge/code-discord.js-yellowgreen.svg)](https://discord.js.org/#/) [![Version](https://img.shields.io/badge/version-Beta-blue.svg)](https://github.com/sp0kl/placeholder2.0/)
+[![Build Passing](https://img.shields.io/badge/build-Passing%20-green.svg?style=flat)](https://github.com/GrimDesignsFiveM/NinjaBot2.0/) [![Status Online](https://img.shields.io/badge/status-Online%20-brightgreen.svg?style=flat)](https://github.com/GrimDesignsFiveM/NinjaBot2.0/) [![Bot Code Library](https://img.shields.io/badge/code-discord.js-yellowgreen.svg)](https://discord.js.org/#/) [![Version](https://img.shields.io/badge/version-Beta v1.00-blue.svg)](https://github.com/GrimDesignsFiveM/NinjaBot2.0/)
 # Placeholder2.0
 A moderation bot written in Discord.JS
 
