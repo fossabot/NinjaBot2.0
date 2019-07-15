@@ -270,7 +270,7 @@ if(command === "about") {
    .setColor("0xff80ff")
    .addField("Version", "Beta v1.00")
    .addField("Author", `Created By: <@${owner.id}>`)
-   .addField("Ninja Bot Support", "[Support Server](https://discord.gg/BkGDvwa)")
+   .addField("Ninja Bot Support", "[Support Server](https://discord.gg/yFmtAUM)")
    message.channel.send(aEmbed)
  }
 	
