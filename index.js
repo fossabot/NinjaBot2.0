@@ -276,6 +276,17 @@ if(command === "about") {
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/BkGDvwa)")
    message.channel.send(aEmbed)
  }
+	
+if(command === "ngsupport") {
+   message.delete().catch();
+   let aEmbed = new Discord.RichEmbed()
+   .setTitle("Ninja Gen Support")
+   .setColor("0xff80ff")
+   .setDescription("To open a support ticket please use the commands below")
+   .addField("Open a ticket", "``tw/open {reason}``")
+   .addField("Close a ticket", "``tw/close``")
+   message.channel.send(aEmbed)
+ }
  
 if(command === "serverlist") {
   message.delete().catch();
