@@ -70,18 +70,13 @@ client.on("message", async message => {
 
   }
 
-  if(command === "ticketcreate") {
+  if(command === "ticketcreate")) {
+    message.delete().catch();	 
     const reason = message.content.split(" ").slice(1).join(" ");
-    let nEmbed = new Discord.RichEmbed()
-    .setTitle("Tickets category not found")
-    .setColor(0xCF40FA)
-    .setDescription("**There wasn't a tickets category so i created one! Please execute the command again to open your ticket**");
-     message.delete().catch();
-    if (!message.guild.channels.exists("name", "★★★★★★tickets★★★★★★", "category")) return message.channel.send(nEmbed) .then(message.guild.createChannel("★★★★★★tickets★★★★★★", "category"));
-
+     if (!message.guild.channels.exists("name", "★★★★★★tickets★★★★★★", "category")) return message.channel.send("There wasn't a tickets category so i created one! Please execute the command again to open your ticket") .then(message.guild.createChannel("★★★★★★tickets★★★★★★", "category"))
     if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
     if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
-    message.guild.createChannel(`ticket-${message.author.id}`, "text",).then(c => {
+       message.guild.createChannel(`ticket-${message.author.id}`, "text",).then(c => {
         let role = message.guild.roles.find("name", "Support Team");
         let role2 = message.guild.roles.find("name", "@everyone");
         let category = message.guild.channels.find(c => c.name == "★★★★★★tickets★★★★★★" && c.type == "category");
@@ -100,14 +95,13 @@ client.on("message", async message => {
         });
         message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
         const embed = new Discord.RichEmbed()
-        .setColor(0xCF40FA)
-        .addField(`Hey ${message.author.username}!`, `Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.`)
-        .addField(`Reason`, `${reason}`)
-        .setTimestamp()
+        .setColor(0x00AE86)
+        .addField(`Hey <@${message.author.id}>` + " Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.")
+        .setTimestamp();
         c.send({ embed: embed });
     }).catch(console.error);
-  }
-
+}
+	
   if(command === "ping") {
   message.delete().catch();	  
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
