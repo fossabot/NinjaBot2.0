@@ -95,8 +95,10 @@ client.on("message", async message => {
         });
         message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
         const embed = new Discord.RichEmbed()
+	.setTitle("Support Ticket")
         .setColor(0x00AE86)
-        .addField(`Hey <@${message.author.id}>` + " Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.")
+	.setDescription(`Hey <@${message.author.id}>`)
+        .addField("Please try to explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.")
         .setTimestamp();
         c.send({ embed: embed });
     }).catch(console.error);
@@ -261,12 +263,13 @@ if(command === "foo") {
 }
 
 if(command === "about") {
+   let owner = client.users.get('444609097233465347');
    message.delete().catch();
    let aEmbed = new Discord.RichEmbed()
    .setTitle("About Ninja Bot")
    .setColor("0xff80ff")
    .addField("Version", "Beta v1.00")
-   .addField("Author", "ツ 𝕿𝖞𝖑𝖊𝖗. 𝕳 ツ#9393")
+   .addField("Author", `Created By: <@${owner.id}>`)
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/BkGDvwa)")
    message.channel.send(aEmbed)
  }
