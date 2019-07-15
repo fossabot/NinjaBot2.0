@@ -70,7 +70,7 @@ client.on("message", async message => {
 
   }
 
-  if(command === "ticketcreate")) {
+  if(command === "ticketcreate") {
     message.delete().catch();	 
     const reason = message.content.split(" ").slice(1).join(" ");
      if (!message.guild.channels.exists("name", "★★★★★★tickets★★★★★★", "category")) return message.channel.send("There wasn't a tickets category so i created one! Please execute the command again to open your ticket") .then(message.guild.createChannel("★★★★★★tickets★★★★★★", "category"))
