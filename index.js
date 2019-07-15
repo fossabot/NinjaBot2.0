@@ -402,7 +402,7 @@ if(command === "rr") {
         let Geo = new Discord.RichEmbed()
         .setColor("0xff80ff")
         .setTimestamp()
-        .setTitle(`GeoIP Lookup`)
+        .setTitle(`IP Lookup`)
         .setDescription(`**__GeoIP Lookup Information__**
       **Looked Up IP**: ||${args}||
       **Status**: ${r.body.status}
