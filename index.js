@@ -280,8 +280,8 @@ if(command === "ngsupport") {
    .setTitle("Ninja Gen Support")
    .setColor("0xff80ff")
    .setDescription("To open a support ticket please use the commands below")
-   .addField("Open a ticket", "``tw/open {reason}``")
-   .addField("Close a ticket", "``tw/close``")
+   .addField("Open a ticket", "``nb/ticketcreate {reason}`` - Opens a support ticket")
+   .addField("Close a ticket", "``nb/ticketclose`` - Closes a open support ticket **Must be run in the ticket channel**")
    message.channel.send(aEmbed)
  }
  
