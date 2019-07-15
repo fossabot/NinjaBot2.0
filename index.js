@@ -236,7 +236,7 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
   message.delete().catch();	 
    let hEmbed = new Discord.RichEmbed()
    .setTitle("Ninja Bot Commands")
-   .setDescription("Below is a list of my commands and their usage.")
+   .setDescription(`<@${message.author.id}>` + "Below is a list of my commands and their usage.")
    .setColor("0xff80ff")
    .addField("Required", "``{}`` -> Required Field")
    .addField("Not Required", "``[]`` -> Not Required Field")
