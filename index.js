@@ -293,7 +293,7 @@ if(message.author.id !== config.ownerID) return message.channel.send("You cannot
 
   var list = client.guilds.array().sort();
   let botembed = new Discord.RichEmbed()
-  .setTitle(list)
+  .setTitle(Ninja Bot Server List)
   .setColor("#0x3dfbff")
   .setDescription("Here is a list of servers I am in.") 
   message.channel.send(botembed);
