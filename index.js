@@ -298,6 +298,7 @@ if(message.author.id !== config.ownerID) return message.channel.send("You cannot
   .setDescription(list) 
   message.channel.send(botembed);
 
+    })
 }
 
  if(command === "report") {
