@@ -286,11 +286,16 @@ if(command === "ngsupport") {
  }
  
 if(command === "serverlist") {
-  message.delete().catch();
+
+if(message.author.id !== config.ownerID) return message.channel.send("You cannot use this command it is **BOTOWNER** only!")
+      snekfetch.get(`http://ip-api.com/json/${args}`).then (r => {
+        message.delete().catch();
+
   var list = client.guilds.array().sort();
   let botembed = new Discord.RichEmbed()
   .setTitle(list)
   .setColor("#0x3dfbff")
+  .setDescription("Here is a list of servers I am in.") 
   message.channel.send(botembed);
 
 }
