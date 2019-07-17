@@ -287,7 +287,7 @@ if(command === "ngsupport") {
  
 if(command === "serverlist") {
 
-if(message.author.id !== config.ownerID) return message.channel.send(`<@${message.author.id}>` + "You cannot use this command it is **BOTOWNER** only!")
+if(message.author.id !== config.ownerID) return message.channel.send(`<@${message.author.id}>` + " You cannot use this command it is **BOTOWNER** only!")
       snekfetch.get(`http://ip-api.com/json/${args}`).then (r => {
         message.delete().catch();
 
