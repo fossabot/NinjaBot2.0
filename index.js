@@ -51,17 +51,24 @@ client.on("message", async message => {
 	
   let Tembed = new Discord.RichEmbed()
       .setColor("0xff0000")
-      .setTitle("Ticket Error :no_entry:")
-      .setDescription(`<@${message.author.id}>` + " :shrug: You can't use this command outside of a ticket channel please re-try the command in the ticket you are trying to close");
+      .setTitle(":no_entry: Error :no_entry:")
+      .setDescription(`<@${message.author.id}>` + " You can't use this command outside of a ticket channel :shrug: please re-try the command in the ticket you are trying to close");
       message.delete().catch();
   
     if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(Tembed);
 
-    message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`-confirm\`. This will time out in 10 seconds and be cancelled.`)
+ let Cembed = new Discord.RichEmbed()
+      .setColor("0xff0000")
+      .setTitle(":no_entry: Error :no_entry:")
+      .setDescription(`<@${message.author.id}>` + " Are you sure? Once confirmed, you cannot reverse this action! This will time out in 60 seconds and be cancelled.")
+      .addField("How To Confirm Close", "Type ```-confirm```");
+     message.delete().catch();
+	  
+    message.channel.send(Cembed)
     .then((m) => {
       message.channel.awaitMessages(response => response.content === '-confirm', {
         max: 1,
-        time: 10000,
+        time: 60000,
         errors: ['time'],
       })
       .then((collected) => {
