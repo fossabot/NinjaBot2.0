@@ -333,7 +333,7 @@ if(command === "newlife") {
    
    .setColor("0x0ffff")
    .setTitle("Here Is Your New Life LOSER! :stuck_out_tongue:") 
-   .addField("Your New Life", life[result]);
+   .setDescription(life[result]);
    message.channel.send(aEmbed)
  }
 	
