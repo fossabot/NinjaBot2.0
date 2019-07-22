@@ -126,7 +126,7 @@ let Tembed4 = new Discord.RichEmbed()
         });
 	       
   let Tembed5 = new Discord.RichEmbed()
-      .setColor("0xff0000")
+      .setColor(53380)
       .setTitle(":white_check_mark: Success :white_check_mark:")
       .setDescription(`<@${message.author.id}>` + "Your ticket has been created")
       .addField(`Your Ticket Channel`, `#${c.name}.`);  
