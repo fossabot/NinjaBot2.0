@@ -59,9 +59,9 @@ client.on("message", async message => {
 
  let Cembed = new Discord.RichEmbed()
       .setColor("0xff0000")
-      .setTitle(":no_entry: Error :no_entry:")
+      .setTitle("Close A Ticket")
       .setDescription(`<@${message.author.id}>` + " Are you sure? Once confirmed, you cannot reverse this action! This will time out in 60 seconds and be cancelled.")
-      .addField("How To Confirm Close", "Type ```-confirm```");
+      .addField("How To Confirm", "Type ``-confirm``");
      message.delete().catch();
 	  
     message.channel.send(Cembed)
@@ -84,10 +84,29 @@ client.on("message", async message => {
   }
 
   if(command === "ticketcreate") {
-    message.delete().catch();	 
+	  
+ let Tembed2 = new Discord.RichEmbed()
+      .setColor("0xff0000")
+      .setTitle(":no_entry: Error :no_entry:")
+      .setDescription(`<@${message.author.id}>` + " There wasn't a tickets category so i created one! :thumbsup: Please execute the command again to open your ticket");
+      message.delete().catch();
+	  
+ let Tembed3 = new Discord.RichEmbed()
+      .setColor("0xff0000")
+      .setTitle(":no_entry: Error :no_entry:")
+      .setDescription(`<@${message.author.id}>` + " This server doesn't have a ``Support Team`` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.");
+      message.delete().catch();
+	  
+let Tembed4 = new Discord.RichEmbed()
+      .setColor("0xff0000")
+      .setTitle(":no_entry: Error :no_entry:")
+      .setDescription(`<@${message.author.id}>` + " You already have a ticket open. :shrug:")
+     .addField("Your Ticket Channel", `#${c.name}`
+      message.delete().catch();
+	  
     const reason = message.content.split(" ").slice(1).join(" ");
-     if (!message.guild.channels.exists("name", "★★★★★★tickets★★★★★★", "category")) return message.channel.send("There wasn't a tickets category so i created one! Please execute the command again to open your ticket") .then(message.guild.createChannel("★★★★★★tickets★★★★★★", "category"))
-    if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
+     if (!message.guild.channels.exists("name", "★★★★★★tickets★★★★★★", "category")) return message.channel.send(Tembed2) .then(message.guild.createChannel("★★★★★★tickets★★★★★★", "category"))
+    if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(Tembed3);
     if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
        message.guild.createChannel(`ticket-${message.author.id}`, "text",).then(c => {
         let role = message.guild.roles.find("name", "Support Team");
