@@ -48,8 +48,14 @@ client.on("message", async message => {
 
 
   if(command === "ticketclose") {
-  message.delete().catch();	  
-    if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
+	
+  let Tembed = new Discord.RichEmbed()
+      .setColor("0xff0000")
+      .setTitle("Ticket Error :no_entry:")
+      .setDescription(`<@${message.author.id}>` + " :shrug: You can't use this command outside of a ticket channel please re-try the command in the ticket you are trying to close");
+      message.delete().catch();
+  
+    if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(Tembed);
 
     message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`-confirm\`. This will time out in 10 seconds and be cancelled.`)
     .then((m) => {
