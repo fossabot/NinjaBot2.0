@@ -378,7 +378,7 @@ if(command === "newlife") {
 if(command === "memes") {
    message.delete().catch();
     let memes = ["https://i.imgur.com/p6yqUEh.jpg", "https://i.imgur.com/TNBHYor.mp4", "https://i.imgur.com/w26cAjn.jpg", "https://i.imgur.com/uiHXKad.jpg", "https://i.imgur.com/jnflrUo.jpg", "https://i.imgur.com/rE1mRAQ.jpg", "https://i.imgur.com/nTFQhvo.mp4", "https://i.imgur.com/KZrL3mr.png", "https://i.imgur.com/9nU228T.jpg", "https://i.imgur.com/zD1VQyt.jpg"];
-    let result = Math.floor((Math.random() * life.length));
+    let result = Math.floor((Math.random() * memes.length));
    
     let aEmbed2 = new Discord.RichEmbed()
    
