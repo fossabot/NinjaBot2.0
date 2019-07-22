@@ -124,7 +124,15 @@ let Tembed4 = new Discord.RichEmbed()
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-        message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
+	       
+  let Tembed5 = new Discord.RichEmbed()
+      .setColor("0xff0000")
+      .setTitle(":white_check_mark: Success :white_check_mark:")
+      .setDescription(`<@${message.author.id}>` + "Your ticket has been created")
+      .addField(`Your Ticket Channel`, `#${c.name}.`);  
+      message.delete().catch();
+	       
+        message.channel.send(Tembed5);
         const embed = new Discord.RichEmbed()
 	.setTitle("Support Ticket")
         .setColor(0x00AE86)
