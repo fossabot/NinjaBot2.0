@@ -147,16 +147,8 @@ let Tembed4 = new Discord.RichEmbed()
       // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
-	  
-   let Pembed= new Discord.RichEmbed()
-      .setColor("0x0ffff")
-      .setTitle(":ping_pong:")
-      .setDescription("Pong")
-      .addField(`Latency`, `${m.createdTimestamp - message.createdTimestamp}ms.`)
-      .addField(`API Latency`, `${math.round(client.ping)}ms`);
-      message.delete().catch();
-	  
-    m.edit(Pembed);
+    m.edit(m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  });
   }
 	
 if(command === "invite") {
@@ -383,6 +375,20 @@ if(command === "newlife") {
    .setDescription(life[result]);
    message.channel.send(aEmbed)
  }
+	
+if(command === "memes") {
+   message.delete().catch();
+    let memes = ["https://i.imgur.com/p6yqUEh.jpg", "https://i.imgur.com/TNBHYor.mp4", "https://i.imgur.com/w26cAjn.jpg", "https://i.imgur.com/uiHXKad.jpg", "https://i.imgur.com/jnflrUo.jpg", "https://i.imgur.com/rE1mRAQ.jpg", "https://i.imgur.com/nTFQhvo.mp4", "https://i.imgur.com/KZrL3mr.png", "https://i.imgur.com/9nU228T.jpg", "https://i.imgur.com/zD1VQyt.jpg"];
+    let result = Math.floor((Math.random() * life.length));
+   
+    let aEmbed2 = new Discord.RichEmbed()
+   
+   .setColor("0x0ffff")
+   .setTitle("Gaming Memes :laughing:") 
+   .setDescription(memes[result]);
+   message.channel.send(aEmbed2)
+ }
+	
 	
   if(command === "sendembed") {
      
