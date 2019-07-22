@@ -100,8 +100,7 @@ client.on("message", async message => {
 let Tembed4 = new Discord.RichEmbed()
       .setColor("0xff0000")
       .setTitle(":no_entry: Error :no_entry:")
-      .setDescription(`<@${message.author.id}>` + " You already have a ticket open. :shrug:")
-     .addField("Your Ticket Channel", `#${c.name}`);
+      .setDescription(`<@${message.author.id}>` + " You already have a ticket open. :shrug:");
       message.delete().catch();
 	  
     const reason = message.content.split(" ").slice(1).join(" ");
