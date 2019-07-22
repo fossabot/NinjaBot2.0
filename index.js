@@ -101,13 +101,13 @@ let Tembed4 = new Discord.RichEmbed()
       .setColor("0xff0000")
       .setTitle(":no_entry: Error :no_entry:")
       .setDescription(`<@${message.author.id}>` + " You already have a ticket open. :shrug:")
-     .addField("Your Ticket Channel", `#${c.name}`
+     .addField("Your Ticket Channel", `#${c.name}`);
       message.delete().catch();
 	  
     const reason = message.content.split(" ").slice(1).join(" ");
      if (!message.guild.channels.exists("name", "★★★★★★tickets★★★★★★", "category")) return message.channel.send(Tembed2) .then(message.guild.createChannel("★★★★★★tickets★★★★★★", "category"))
     if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(Tembed3);
-    if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`You already have a ticket open.`);
+    if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(Tembed4);
        message.guild.createChannel(`ticket-${message.author.id}`, "text",).then(c => {
         let role = message.guild.roles.find("name", "Support Team");
         let role2 = message.guild.roles.find("name", "@everyone");
