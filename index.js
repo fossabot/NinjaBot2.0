@@ -326,14 +326,13 @@ if(message.author.id !== config.ownerID) return message.channel.send(`<@${messag
 	
 if(command === "newlife") {
    message.delete().catch();
-    let life = ["We have found you a new life it is available at your local walmart :wink:", "Your new life is available at your local hospital for $2.99"];
+    let life = ["We have found you a new life it is available at your local walmart :wink:", "Your new life is available at your local hospital for $2.99", "Need a life? find something to do loser :stuck_out_tongue:", "I'm sorry i'm not sure if i can help with that :shrug:"];
     let result = Math.floor((Math.random() * life.length));
    
     let aEmbed = new Discord.RichEmbed()
    
    .setColor("0x0ffff")
-   .setTitle("Your New Life!") 
-   .setDescription("Here is your new life LOSER! :stuck_out_tongue:")
+   .setTitle("Here Is Your New Life LOSER! :stuck_out_tongue:") 
    .addField("Your New Life", life[result]);
    message.channel.send(aEmbed)
  }
