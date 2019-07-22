@@ -154,7 +154,7 @@ if(command === "invite") {
   message.delete().catch();	
    let iEmbed = new Discord.RichEmbed()
    .setTitle("Invite Ninja Bot")
-   .setColor("0xff80ff")
+   .setColor("#0x3dfbff")
    .addField("Invite Link", "[Invite Me Here](https://discordapp.com/api/oauth2/authorize?client_id=595155471611068426&permissions=2146958839&scope=bot)")
    message.channel.send(iEmbed)
  }	
@@ -275,7 +275,7 @@ if (message.content.toLowerCase().startsWith(config.prefix + `add`)) {
    let hEmbed = new Discord.RichEmbed()
    .setTitle("Ninja Bot Commands")
    .setDescription(`<@${message.author.id}>` + "Below is a list of my commands and their usage.")
-   .setColor("0xff80ff")
+   .setColor("#0x3dfbff")
    .addField("Required", "``{}`` -> Required Field")
    .addField("Not Required", "``[]`` -> Not Required Field")
    .addField("Kick A Member", "``nb/kick @User`` - Kicks the mentioned user")
@@ -306,7 +306,7 @@ if(command === "about") {
    let aEmbed = new Discord.RichEmbed()
    .setTitle("About Ninja Bot")
    .setDescription("Ninja Bot is a bot created in the ``Discord.js`` library with mostly moderation in mind")
-   .setColor("0xff80ff")
+   .setColor("#0x3dfbff")
    .addField("Current Version", "Beta ``v1.00``")
    .addField("Author", `Created By: <@${owner.id}>`)
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/yFmtAUM)")
@@ -317,7 +317,7 @@ if(command === "ngsupport") {
    message.delete().catch();
    let aEmbed = new Discord.RichEmbed()
    .setTitle("Ninja Gen Support")
-   .setColor("0xff80ff")
+   .setColor("#0x3dfbff")
    .setDescription("To open a support ticket please use the commands below")
    .addField("Open a ticket", "``nb/ticketcreate {reason}`` - Opens a support ticket")
    .addField("Close a ticket", "``nb/ticketclose`` - Closes a open support ticket **Must be run in the ticket channel**")
@@ -349,7 +349,7 @@ if(message.author.id !== config.ownerID) return message.channel.send(`<@${messag
 
      let reportEmbed = new Discord.RichEmbed()
      .setDescription("Reports")
-     .setColor("0xff80ff")
+     .setColor("#0x3dfbff")
      .addField("Reported User", `${rUser} with ID ${rUser.id }`)
      .addField("Reported by", `${message.author} with ID ${message.author.id}`)
      .addField("Channel", message.channel)
@@ -370,7 +370,7 @@ if(command === "newlife") {
    
     let aEmbed = new Discord.RichEmbed()
    
-   .setColor("0x0ffff")
+   .setColor("#0x3dfbff")
    .setTitle("Here Is Your New Life LOSER! :stuck_out_tongue:") 
    .setDescription(life[result]);
    message.channel.send(aEmbed)
@@ -383,7 +383,7 @@ if(command === "memes") {
    
     let aEmbed2 = new Discord.RichEmbed()
    
-   .setColor("0x0ffff")
+   .setColor("#0x3dfbff")
    .setTitle("Gaming Memes :laughing:") 
    .setDescription(memes[result]);
    message.channel.send(aEmbed2)
@@ -402,7 +402,7 @@ if(command === "memes") {
   
   .setDescription(Message)
   .setThumbnail(sicon)
-  .setColor("0xff80ff")
+  .setColor("#0x3dfbff")
     
   message.channel.send(embedMessage);
   }
@@ -415,7 +415,7 @@ if(!args[0] || args[0 == "help"]) return message.reply("Usage: nb/suggest <What 
 
     let sEmbed = new Discord.RichEmbed()
     .setTitle("Suggestion")
-    .setColor("0xff80ff")
+    .setColor("#0x3dfbff")
     .addField("User", message.author)
     .addField("UserID", `${message.author.id}`)
     .addField("Server", `${message.channel.guild}`)
@@ -475,7 +475,7 @@ if(command === "rr") {
         message.delete().catch();
 
         let Geo = new Discord.RichEmbed()
-        .setColor("0xff80ff")
+        .setColor("#0x3dfbff")
         .setTimestamp()
         .setTitle(`IP Lookup`)
         .setDescription(`**__GeoIP Lookup Information__**
@@ -506,7 +506,7 @@ if(command === "rr") {
     let serverembed = new Discord.RichEmbed()
     .setAuthor(`${message.guild.name} - Informations`, message.guild.iconURL)
     .setDescription("Server Information")
-    .setColor("#0xff80ff")
+    .setColor("#0x3dfbff")
     .setThumbnail(sicon)
     .addField("Server Owner", message.guild.owner, true)
     .addField("Server Name", message.guild.name, true)
