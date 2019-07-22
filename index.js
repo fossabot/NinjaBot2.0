@@ -305,8 +305,9 @@ if(command === "about") {
    message.delete().catch();
    let aEmbed = new Discord.RichEmbed()
    .setTitle("About Ninja Bot")
+   .setDescription("Ninja Bot is a bot created in the ``Discord.js`` library with mostly moderation in mind")
    .setColor("0xff80ff")
-   .addField("Version", "Beta v1.00")
+   .addField("Current Version", "Beta ``v1.00``")
    .addField("Author", `Created By: <@${owner.id}>`)
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/yFmtAUM)")
    message.channel.send(aEmbed)
