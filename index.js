@@ -323,6 +323,21 @@ if(message.author.id !== config.ownerID) return message.channel.send(`<@${messag
      message.delete().catch(O_o=>{});
      reportChannel.send(reportEmbed);
   } 
+	
+if(command === "newlife") {
+   message.delete().catch();
+    let life = ["We have found you a new life it is available at your local walmart :wink:", "Your new life is available at your local hospital for $2.99"];
+    let result = Math.floor((Math.random() * life.length));
+   
+    let aEmbed = new Discord.RichEmbed()
+   
+   .setColor("0x0ffff")
+   .setTitle("Your New Life!") 
+   .setDescription("Here is your new life LOSER! :stuck_out_tongue:")
+   .addField("Your New Life", life[result]);
+   message.channel.send(aEmbed)
+ }
+	
   if(command === "sendembed") {
      
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));    
@@ -339,6 +354,7 @@ if(message.author.id !== config.ownerID) return message.channel.send(`<@${messag
     
   message.channel.send(embedMessage);
   }
+	
   if(command === "suggest") {
     const sayMessage = args.join(" ");
     message.delete().catch();
@@ -359,6 +375,7 @@ client.guilds.find("id","586817026522218507").channels.find("name","suggestions"
 message.reply("Suggestion has been sent");
 console.log(`<@${message.author.id}> has used the suggest command in ${message.channel.guild} channel ${message.channel}`)
   }
+	
   if(command === "roleremove") {
     message.delete().catch();
     if(!args[0] || args[0 == "help"]) return message.reply("Usage: nb/removerole <@user> **rolename** ");
