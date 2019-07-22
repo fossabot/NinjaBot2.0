@@ -143,9 +143,12 @@ let Tembed4 = new Discord.RichEmbed()
     }).catch(console.error);
 }
 	
-  if(command === "ping") {
+  if(command === "ping") {	  
+      // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
+    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
+    const m = await message.channel.send("Ping?");
 	  
- let Pembed= new Discord.RichEmbed()
+   let Pembed= new Discord.RichEmbed()
       .setColor("0x0ffff")
       .setTitle(":ping_pong:")
       .setDescription("Pong")
@@ -153,9 +156,6 @@ let Tembed4 = new Discord.RichEmbed()
       .addField(`API Latency`, `${math.round(client.ping)}ms`);
       message.delete().catch();
 	  
-      // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Ping?");
     m.edit(Pembed);
   }
 	
