@@ -526,7 +526,7 @@ if(command === "rr") {
      if(command === "prefix") {
       message.delete().catch();
        if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply(`You do not have permmsion to use this command`)
-       if(!args[0] || args[0 == "help"]) return message.reply("Usage: phsetprefix <Prefix you want here>");
+       if(!args[0] || args[0 == "help"]) return message.reply("Usage: ``nb/prefix <Prefix you want here>``");
 
        let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
        let prefix = botconfig.prefix
