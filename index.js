@@ -522,6 +522,33 @@ if(command === "rr") {
 
     message.channel.send(serverembed);
     }
+
+     if(command === "serverinfo") {
+      message.delete().catch();
+       if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply(`You do not have permmsion to use this command`)
+       if(!args[0] || args[0 == "help"]) return message.reply("Usage: phsetprefix <Prefix you want here>");
+
+       let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+       let prefix = botconfig.prefix
+
+       prefixes[message.guild.id] = {
+           prefixes: args[0]
+       };
+
+       fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) => {
+           if (err) console.log(err)
+       });
+
+       let sEmbed = new Discord.RichEmbed()
+       .setColor("#0x3dfbff")
+       .setTitle("Prefix Set!")
+       .setDescription(`Set to ${args[0]}`);
+
+       message.channel.send(sEmbed);
+       message.delete().catch();
+       console.log(`<@${message.author.id}> has used the setprefix command in ${message.channel.guild} channel ${message.channel}`)
+    }
+
   });
 
 
