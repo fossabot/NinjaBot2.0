@@ -130,6 +130,7 @@ let Tembed4 = new Discord.RichEmbed()
       .setTitle(":white_check_mark: Success :white_check_mark:")
       .setDescription(`<@${message.author.id}>` + "Your ticket has been created")
       .addField(`Your Ticket Channel`, `#${c.name}.`);  
+      message.react("✅")
       message.delete().catch();
 	       
         message.channel.send(Tembed5);
