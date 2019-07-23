@@ -134,7 +134,7 @@ let Tembed4 = new Discord.RichEmbed()
 	       
         message.channel.send(Tembed5).then (r => {
         message.react("✅")
-    }
+    });
 
         const embed = new Discord.RichEmbed()
 	.setTitle("Support Ticket")
