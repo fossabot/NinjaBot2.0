@@ -529,7 +529,7 @@ if(command === "rr") {
        if(!args[0] || args[0 == "help"]) return message.reply("Usage: ``nb/prefix <Prefix you want here>``");
 
        let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-       let prefix = botconfig.prefix
+       let prefix = config.prefix
 
        prefixes[message.guild.id] = {
            prefixes: args[0]
