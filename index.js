@@ -564,6 +564,17 @@ if(command === "nr") {
    .addField("#8 - DM Spam", "**DO NOT** spam advertise members in their DMs")
    .addField("#9 - Server Bots", "**NO** unauthorized bots all unauthorized bots and the member who invited them **WILL BE BANNED**")
    .addField("#10 - Political Views", "**NO** extreme political views")
+   .addField("#11 - No Drama", "Arguing is to remain in your DMs")
+   .addField("#12 - Discord TOS", "Ensure you conduct Yourselves in line with the discord TOS")
+   .addField("#13 - Owner Pinging", "**DO NOT** Spam, or Mass DM the server owner/s ``INSTANT BAN``")
+   .addField("#14 - Bullying", "Absolutely **NO** bullying ``INSTANT BAN``")
+   .addField("#15 - Server Jobs", "**DO NOT** ask for Admin, Moderator or Staff positions. These are assigned to known and trusted members")
+   .addField("#16 - Advertising", "**NO** advertising or self promoting without admin approval") 
+   .addField("#17 - Staff Disrespect", "Disrespect to Admin, Staff or Moderators will result in a ``INSTANT BAN``")
+   .addField("#18 - Malicious Content", "**NO** virus links or free links to get money ``INSTANT BAN``")
+   .addField("#19 - Blocking Staff", "Blocking any of our Staff, Admins or Moderators will result in a ``INSTANT BAN``
+   .addField("#20 - Credit Cards (Carding)", "**NO** Credit Cards ``INSTANT BAN``")
+   .addField("#21 - General Conversations", "**ALL** general chat should remain in the ``General Chat`` channel.")
    message.channel.send(rEmbed)
  }	
 
