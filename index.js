@@ -574,7 +574,7 @@ if(command === "nr") {
    .addField("#18 - Malicious Content", "**NO** virus links or free links to get money ``INSTANT BAN``")
    .addField("#19 - Blocking Staff", "Blocking any of our Staff, Admins or Moderators will result in a ``INSTANT BAN``
    .addField("#20 - Credit Cards (Carding)", "**NO** Credit Cards ``INSTANT BAN``")
-   .addField("#21 - General Conversations", "**ALL** general chat should remain in the ``General Chat`` channel.")
+   .addField("#21 - General Conversations", "**ALL** general chat should be kept to the ``General Chat`` channel.")
    message.channel.send(rEmbed)
  }	
 
