@@ -551,7 +551,7 @@ if(command === "rr") {
 
 if(command === "nr") {
   message.delete().catch();	
-   let iEmbed = new Discord.RichEmbed()
+   let rEmbed = new Discord.RichEmbed()
    .setTitle("Ninja Support Server Rules")
    .setColor("#0x3dfbff")
    .addField("#1 - Respect", "Be respectful to all Admins, Moderators & Members")
@@ -562,9 +562,9 @@ if(command === "nr") {
    .addField("#6 - Channel Flooding", "**DO NOT** flood channels with text, emoji or multi line spam ``INSTANT BAN``") 
    .addField("#7 - NSFW", "This **IS NOT** a NSFW friendly server") 
    .addField("#8 - DM Spam", "**DO NOT** spam advertise members in their DMs")
-   .addField("#9 -
-   .addField("#10 -
-   message.channel.send(iEmbed)
+   .addField("#9 - Server Bots", "**NO** unauthorized bots all unauthorized bots and the member who invited them **WILL BE BANNED**")
+   .addField("#10 - Political Views", "**NO** extreme political views")
+   message.channel.send(rEmbed)
  }	
 
   });
