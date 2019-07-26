@@ -553,6 +553,7 @@ if(command === "nr") {
   message.delete().catch();	
    let rEmbed = new Discord.RichEmbed()
    .setTitle("Ninja Support Server Rules")
+   .setDescription("React to this message with :check: for the ``Verified Members`` role")
    .setColor("#0x3dfbff")
    .addField("#1 - Respect", "Be respectful to all Admins, Moderators & Members")
    .addField("#2 - Screen Sharing", "Do not screen share this guild or staff direct messages to you with other guilds ``INSTANT BAN``")
