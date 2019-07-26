@@ -558,7 +558,7 @@ if(command === "nr") {
    .addField("#2 - Screen Sharing", "Do not screen share this guild or staff direct messages to you with other guilds ``INSTANT BAN``")
    .addField("#3 - Racism", "**NO** racism or otherwise offensive remarks ``INSTANT BAN``")
    .addField("#4 - Personal Info", "**DO NOT** release personal information ``SSN, CC ect`` in this server ``INSTANT BAN``")
-   .addField("#5 - Hacker Talk", "No DDOS, IP Grabber or Booster talk")
+   .addField("#5 - Hacker Talk", "No DDOS, IP Grabber or Booter talk")
    .addField("#6 - Channel Flooding", "**DO NOT** flood channels with text, emoji or multi line spam ``INSTANT BAN``") 
    .addField("#7 - NSFW", "This **IS NOT** a NSFW friendly server") 
    .addField("#8 - DM Spam", "**DO NOT** spam advertise members in their DMs")
