@@ -343,6 +343,14 @@ if(message.author.id !== config.ownerID) return message.channel.send(`<@${messag
 
  if(command === "report") {
   message.delete().catch();
+
+let reportEmbed2 = new Discord.RichEmbed()
+     .setTitle("Report Help")
+     .setDescription("How to report a member :thinking:")
+     .setColor("#0x3dfbff")
+     .addField("Command Usage", "``nb/report``")
+     .addField("Usage Example", "``nb/report @User#123``")
+
   if(!args[0] || args[0 == "help"]) return message.reply("Usage: nb/report <What you want to report>");
   let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
      if(!rUser) return message.channel.send("Couldn't find the mentioned user");
