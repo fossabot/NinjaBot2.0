@@ -394,7 +394,7 @@ if(command === "memes") {
    
    .setColor("#0x3dfbff")
    .setTitle("Gaming Memes :laughing:") 
-   .setDescription(memes[result]);
+   .setImage(memes[result]);
    message.channel.send(aEmbed2)
  }
 	
