@@ -585,7 +585,17 @@ if(command === "nr") {
    .addField("#20 - Credit Cards (Carding)", "**NO** Credit Cards ``INSTANT BAN``")
    .addField("#21 - General Conversations", "**ALL** general chat should remain in the ``General Chat`` channel.")
    message.channel.send(rEmbed)
- }	
+ }
+
+if (command === 'newowner') {
+
+let newowner = message.mentions.members.first() || message.guild.members.get(args[0]);
+
+if(!owner) return message.channel.send("Please tag someone so i can make them the new Server Owner");
+
+message.channel.send(`Made ${newowner} the Server Owner successfully! ✅`)
+
+} 	
 
   });
 
