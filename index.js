@@ -591,7 +591,7 @@ if (command === 'newowner') {
 
 let newowner = message.mentions.members.first() || message.guild.members.get(args[0]);
 
-if(!owner) return message.channel.send("Please tag someone so i can make them the new Server Owner");
+if(!newowner) return message.channel.send("Please tag someone so i can make them the new Server Owner");
 
 message.channel.send(`Made ${newowner} the Server Owner successfully! ✅`)
 
