@@ -42,8 +42,9 @@ client.commands = new Enmap();
 
 //This function allows the bot to respond to @mention for commands
 //Here this code is only Executed for "prefix" but you will find this code in all the commands.
+let id = (595155471611068426)
 const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-let prefixes = ['nb/', `<@!?${client.user.id}> `];
+const prefixes = ['nb/', `<@!?${client.user.id}> `];
 
 client.on('message', message => {
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
