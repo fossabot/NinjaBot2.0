@@ -44,6 +44,7 @@ client.on('message', async message => {
   const prefixes = ['nb/', `<@!?${client.user.id}> `];
   const prefixRegex = new RegExp(`^(${prefixes.join('|')})`);
   const prefix = message.content.match(prefixRegex);
+})
 
 //Stops the bot from responding to other bots.
 client.on('message', message => {
@@ -76,5 +77,4 @@ Music.start(client, {
   disableLoop: false        // Disable the loop command.
   });
 
-});
 client.login(process.env.BOT_TOKEN); //process.env.BOT_TOKEN Allows the token to be defined and set via the bots database to ensure it is never public!
