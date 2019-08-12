@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const customisation = require('../customisation.json');
+const customisation = require('../data/customisation.json');
 
 exports.run = async (client, message, args) => {
     if (!args[0]) return message.reply('Provide a truth!')
