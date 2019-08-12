@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const customisation = require('../data/customisation.json');
-const client = new Discord.Client()
+const client = new Discord.Client();
 
 //This is the bots required node modules, certain aspects of the code will not work without this.
 const Discord = require("discord.js");
