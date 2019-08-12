@@ -35,6 +35,6 @@ exports.run = async (client, message, args) => {
    .addField("Gaming Memes", "``nb/gmemes`` Responds with a random Gaming based meme")
    .addField("New Life", "``nb/newlife`` Generates random life based responses")
    .addField("Poke A Member", "``nb/poke {user}`` Pokes the mentioned member")
-   .setFooter(`Next Page: nb/funcmds 2`);   
+   .setFooter(`Next Page: nb/funp2`);   
    message.channel.send(hEmbed)
  }
