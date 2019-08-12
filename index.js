@@ -40,24 +40,6 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-client.on('message', message => {
-        const prefix = ['nb/'];
-        const escapeRegex = string => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
-	if (!prefixRegex.test(message.content)) return;
-
-        let props = require(`./commands/${file}`);
-        let commandName = file.split(".")[0];
-
-	const [, matchedPrefix] = message.content.match(prefixRegex);
-	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-	const command = args.shift();
-
-	if (command === 'ping') {
-		message.channel.send('Pong!');
-	} else if (commandName, props);
-          message.channel.send(command);
-
 //Stops the bot from responding to other bots.
 client.on('message', message => {
   if(message.author.bot) return;
@@ -89,5 +71,4 @@ Music.start(client, {
   disableLoop: false        // Disable the loop command.
   });
 
-});
 client.login(process.env.BOT_TOKEN); //process.env.BOT_TOKEN Allows the token to be defined and set via the bots database to ensure it is never public!
