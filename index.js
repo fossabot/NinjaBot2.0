@@ -40,7 +40,8 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-//This function should allow the bot to respond to @mention for commands
+//This function allows the bot to respond to @mention for commands
+//Here this code is only Executed for "prefix" but you will find this code in all the commands.
 const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 let prefix = ('nb/');
 
