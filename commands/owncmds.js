@@ -28,6 +28,8 @@ exports.run = async (client, message, args) => {
    .addField("Set Status", "``nb/setstatus`` Sets the bots Online status ``Status must be Idle, Online, Away or DND``")
    .addField("GEO IP Lookup", "``nb/geoip {IPHere}`` Checks and returns info on the given IP Address")
    .addField("Shut Down", "``nb/shutdown`` Shuts down the bot ``Restarts if Database hosted``")
+   .addField("Blacklist", "``nb/blacklist {@user}`` Blacklists a user from using the bot")
+   .addField("Un Blacklist", "``nb/unblacklist`` Removes a user who is blacklisted from using the bot")
    .setFooter(`© Ninja Bot v1.00`);   
    message.channel.send(hEmbed)
  }
