@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
    .addField("Required", "``{}`` -> Required Field")
    .addField("Not Required", "``[]`` -> Not Required Field")
    .addBlankField()
-   .addField("Exec", "``nb/exec {code} Executes the given MySQL String")
+   .addField("Exec", "``nb/exec {code}`` Executes the given MySQL String")
    .addField("Eval", "``nb/eval`` Executes the given JS or JSON code")
    .addField("Set Game", "``nb/setgame {Status} {Game}`` Sets the bots Playing status ``Status must be Playing, Watching or Listening``")
    .addField("Set Status", "``nb/setstatus`` Sets the bots Online status ``Status must be Idle, Online, Away or DND``")
