@@ -40,6 +40,21 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
+//This function allows the bot to respond to @mention for commands
+//Here this code is only Executed for "prefix" but you will find this code in all the commands.
+const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+let prefix = (`nb/`)
+
+const prefixes = ['nb/', `<@!?${client.user.id}> `];
+
+client.on('message', message => {
+	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+	if (!prefixRegex.test(message.content)) return;
+
+	const [, matchedPrefix] = message.content.match(prefixRegex);
+	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+	const command = args.shift();
+
 client.on('message', async message => {
   const prefixes = ['nb/', `<@!?${client.user.id}> `];
   const prefixRegex = new RegExp(`^(${prefixes.join('|')})`);
