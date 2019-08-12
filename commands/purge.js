@@ -33,5 +33,6 @@ message.delete().catch();
                 message.channel.send(`:white_check_mark: Purged \`${deletedMessages}\` messages.`)
                     .then(m => m.delete(2000));
         }).catch(console.error);
-    }
+    })
+}
 	  
