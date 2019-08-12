@@ -1,3 +1,4 @@
+//These are the required node modules, DO NOT touch these.
 const Discord = require("discord.js");
 const Music = require('discord.js-musicbot-addon');
 const Enmap = require("enmap");
@@ -9,7 +10,7 @@ const client = new Discord.Client();
 const config = require('./data/config.json');
 client.config = config;
 
-
+//This is the bots startup log output and playing status.
 client.on("ready",  async () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   client.user.setGame(`nb/help in ${client.guilds.size} Servers`, `https://www.twitch.tv/monstercat`);
@@ -27,6 +28,7 @@ client.on("guildDelete", guild => {
   client.user.setGame(`nb/help in ${client.guilds.size} Servers`, `https://www.twitch.tv/monstercat`);
 });
 
+//Allows the bot to log and show events (Joining New Servers)
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -38,12 +40,14 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-client.on('message', message => {
-  const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
-    const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : '!';
+//This function should allow the bot to respond to @mention for commands (broken)
+//client.on('message', message => {
+//  const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
+//    const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : '!';
 
 });
 
+//This code line allows the commands to be individual/seperate files
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -55,19 +59,7 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-const requireAll = require('require-all');   // Don't forget to install!
-
-const files = requireAll({                   // Require all the files within your
-  dirname: `${__dirname}/events`,            // event directory which have a name
-  filter: /^(?!-)(.+)\.js$/                  // ending in '.js' NOT starting
-});                                          // with '-' (a way to disable files).
-
-client.removeAllListeners();                 // Prevent duplicate listeners on reload.
-
-for (const name in files) {                  // Iterate through the files object
-  const event = files[name];
-}
-
+//These lines are required for implimenting music features. 
 Music.start(client, {
   youtubeKey: "AIzaSyDu_YZn7ivq66a3baryXztxK8rFrERAKvA",
   prefix: config.prefix, // Prefix for the commands.
@@ -81,4 +73,4 @@ Music.start(client, {
   disableLoop: false        // Disable the loop command.
   });
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN); //process.env.BOT_TOKEN Allows the token to be defined and set via the bots database to ensure it is never public!
