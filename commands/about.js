@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
 //This function allows the bot to respond to @mention for commands
 //Here this code is only Executed for "prefix" but you will find this code in all the commands.
 const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-let prefix = ('<@!?${client.user.id}>`)
+let prefix = (`<@!?${client.user.id}>`)
 
 client.on('message', message => {
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
