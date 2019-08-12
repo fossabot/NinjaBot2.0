@@ -40,13 +40,20 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-client.on('message', async message => {
-  const prefixes = ['nb/', `<@!?${client.user.id}> `];
-  const prefixRegex = new RegExp(`^(${prefixes.join('|')})`);
-  const prefix = message.content.match(prefixRegex);
-  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-  const command = args.shift();
-})
+client.on('message', message => {
+	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+	if (!prefixRegex.test(message.content)) return;
+
+        let props = require(`./commands/${file}`);
+        let commandName = file.split(".")[0];
+
+	const [, matchedPrefix] = message.content.match(prefixRegex);
+	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+	const command = args.shift();
+
+	if (command === 'ping') {
+		message.channel.send('Pong!');
+	} else if (commandName, props);
 
 //Stops the bot from responding to other bots.
 client.on('message', message => {
