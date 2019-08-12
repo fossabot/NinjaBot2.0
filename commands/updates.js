@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const snekfetch = require('snekfetch');
 const fs = require("fs");
-const owners = require ('../Data/config.json');
+const owners = require ('../data/config.json');
 
 exports.run = async (client, message, args) => {
 	
