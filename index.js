@@ -45,7 +45,7 @@ client.commands = new Enmap();
 //  const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
 //    const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : '!';
 
-});
+//});
 
 //Stops the bot from responding to other bots.
 client.on('message', message => {
