@@ -52,6 +52,7 @@ client.on('message', message => {
 	const [, matchedPrefix] = message.content.match(prefixRegex);
 	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
 	const command = args.shift();
+}
 
 	if (command === 'prefix') {
    message.delete().catch();
