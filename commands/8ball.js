@@ -9,24 +9,6 @@ const owner = config.ownerID
  
 //This SHOULD allow us to use the "client, message & args" async functions.(Example: message.author.id)
 exports.run = async (client, message, args) => {
- 
-//This function allows the bot to respond to @mention for commands
-//Here this code is only Executed for "prefix" but you will find this code in all the commands.
-const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-let prefix = (`nb/`)
- 
-const prefixes = ['nb/', `<@!?${client.user.id}> `];
- 
-client.on('message', message => {
-	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
-	if (!prefixRegex.test(message.content)) return;
- 
-	const [, matchedPrefix] = message.content.match(prefixRegex);
-	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-	const command = args.shift();
- 
-exports.run = async (bot, message, args) => {
-if (command === '8ball') {
     if(!args[2]) return message.reply("Please ask a full question");
     let replies = [
         'Maybe.',
@@ -82,6 +64,4 @@ exports.help = {
     description: 'Ask the bot a Question.',
     usage: '8ball (question)'
   };
- }
-})
 
