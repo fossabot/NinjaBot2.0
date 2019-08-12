@@ -54,17 +54,15 @@ client.on('message', message => {
 	const command = args.shift();
 
 	if (command === 'prefix') {
-		message.reply(`you can either ping me or use \`${prefix}\` as my prefix.`);
-	}
-
-client.on('message', message => {
-	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
-	if (!prefixRegex.test(message.content)) return;
-
-	const [, matchedPrefix] = message.content.match(prefixRegex);
-	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-	const command = args.shift();
-});
+   message.delete().catch();
+   let pEmbed = new Discord.RichEmbed()
+   .setTitle("Prefix Help")
+   .setDescription(`you can either ping me or use \`${prefix}\` as my prefix.`)
+   .setColor("#0x3dfbff")
+message.channel.send(pEmbed).then(sentMessage => {
+	sentMessage.react('👍');
+ });
+}
 
 //Stops the bot from responding to other bots.
 client.on('message', message => {
