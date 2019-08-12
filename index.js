@@ -47,6 +47,11 @@ client.commands = new Enmap();
 
 });
 
+//Stops the bot from responding to other bots.
+client.on('message', message => {
+  if(message.author.bot) return;
+})
+
 //This code line allows the commands to be individual/seperate files
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
