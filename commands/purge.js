@@ -14,12 +14,6 @@ exports.run = async (client, message, args) => {
  
 //This is your Command or Discord Rich Embed code Line followed by the end of the command. OR close "}" bracket
 message.delete().catch();
-
-        const deleteCount = parseInt(args[0], 10);
-if(!deleteCount || deleteCount < 2 || deleteCount > 1000)
-      return message.reply("Please provide a number between 2 and 1000 for the number of messages to delete");
-                }
-
         let messagecount = parseInt(args[1]) || 1;
 
         const deletedMessages = -1;
@@ -32,6 +26,9 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 1000)
                 }
 
         }).then(() => {
+                if (!deletedMessages === -1) deletedMessages= 0;
+                return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+
                 if (deletedMessages === -1) deletedMessages = 0;
                 message.channel.send(`:white_check_mark: Purged \`${deletedMessages}\` messages.`)
                     .then(m => m.delete(2000));
