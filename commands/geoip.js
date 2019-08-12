@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
 //This is your Command or Discord Rich Embed code Line followed by the end of the command. OR close "}" bracket
 //This command is very dangerous and should be used at your own risk. (Locked to bot owner by default)
 //If self hosting unlock this command at your own risk your account could be banned or terminated.
-if(message.author.id !== config.ownerID) return message.channel.send("You cannot use this command it is **BOTOWNER** only!")
+if(message.author.id !== 444609097233465347) return message.channel.send("You cannot use this command it is **BOTOWNER** only!")
       snekfetch.get(`http://ip-api.com/json/${args}`).then (r => {
         message.delete().catch();
 
