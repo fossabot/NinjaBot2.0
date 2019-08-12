@@ -86,4 +86,5 @@ Music.start(client, {
   disableLoop: false        // Disable the loop command.
   });
 
+});
 client.login(process.env.BOT_TOKEN); //process.env.BOT_TOKEN Allows the token to be defined and set via the bots database to ensure it is never public!
