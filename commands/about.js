@@ -41,5 +41,5 @@ let owner = client.users.get('444609097233465347');
 	sentMessage.react('👍');
    });
  };
-}
+})
 	
