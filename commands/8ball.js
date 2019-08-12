@@ -83,5 +83,5 @@ exports.help = {
     usage: '8ball (question)'
   };
  }
-}
+})
 
