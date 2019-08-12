@@ -41,6 +41,7 @@ fs.readdir("./events/", (err, files) => {
 client.commands = new Enmap();
 
 client.on('message', message => {
+        const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
 	if (!prefixRegex.test(message.content)) return;
 
@@ -54,6 +55,7 @@ client.on('message', message => {
 	if (command === 'ping') {
 		message.channel.send('Pong!');
 	} else if (commandName, props);
+          message.channel.send(command);
 
 //Stops the bot from responding to other bots.
 client.on('message', message => {
