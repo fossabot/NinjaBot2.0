@@ -40,10 +40,9 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-client.on('message', async message => {
-  const prefixes = ['!', '\\?', '\\/', `<@!?${client.user.id}> `];
-  const prefixRegex = new RegExp(`^(${prefixes.join('|')})`);
-  const prefix = message.content.match(prefixRegex);
+client.on('message', message => {
+  const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
+    const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : '!';
 
 //Stops the bot from responding to other bots.
 client.on('message', message => {
