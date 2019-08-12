@@ -20,6 +20,8 @@ exports.run = async (client, message, args) => {
    let result = Math.floor((Math.random() * memes.length));
    
     let aEmbed2 = new Discord.RichEmbed()
+    
+    let memes = require("../data/memes.json");
    
    .setColor("#0x3dfbff")
    .setTitle("Gaming Memes :laughing:") 
