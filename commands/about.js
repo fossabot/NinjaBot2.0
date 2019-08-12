@@ -14,7 +14,6 @@ const owner = config.ownerID
 exports.run = async (client, message, args) => {
 
 //This is your Command or Discord Rich Embed code Line followed by the end of the command. OR close "}" bracket	
-if (command === 'about') {
 let owner = client.users.get('444609097233465347');
    message.delete().catch();
    let aEmbed = new Discord.RichEmbed()
