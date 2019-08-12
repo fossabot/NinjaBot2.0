@@ -44,6 +44,9 @@ client.on('message', async message => {
   const prefixes = ['nb/', `<@!?${client.user.id}> `];
   const prefixRegex = new RegExp(`^(${prefixes.join('|')})`);
   const prefix = message.content.match(prefixRegex);
+
+const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+const command = args.shift();
 })
 
 //Stops the bot from responding to other bots.
