@@ -39,6 +39,6 @@ let owner = client.users.get('444609097233465347');
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
  });
-}
+})
 	
 });
