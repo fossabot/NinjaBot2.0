@@ -26,4 +26,5 @@ exports.run = async (client, message, args) => {
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
 });
+}
 	
