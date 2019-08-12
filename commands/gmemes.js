@@ -17,14 +17,12 @@ exports.run = async (client, message, args) => {
   
 //  let memes = ["https://i.imgur.com/p6yqUEh.jpg", "https://i.imgur.com/TNBHYor.mp4", "https://i.imgur.com/w26cAjn.jpg", "https://i.imgur.com/uiHXKad.jpg", "https://i.imgur.com/jnflrUo.jpg", "https://i.imgur.com/rE1mRAQ.jpg", "https://i.imgur.com/nTFQhvo.mp4", "https://i.imgur.com/KZrL3mr.png", "https://i.imgur.com/9nU228T.jpg", "https://i.imgur.com/zD1VQyt.jpg"];
 //This line ^^ Is outdated and was removed after the end of Ninja Bot's beta stages. The links to the memes are now found and executed from the folder listed above (../data/memes.json)  
+   let memes = require("../data/memes.json");
    let result = Math.floor((Math.random() * memes.length));
-   
+	
     let aEmbed2 = new Discord.RichEmbed()
-    
-    let memes = require("../data/memes.json");
-   
-   .setColor("#0x3dfbff")
-   .setTitle("Gaming Memes :laughing:") 
+   .setTitle("Gaming Memes :laughing:")	
+   .setColor("#0x3dfbff") 
    .setImage(memes[result]);
    message.channel.send(aEmbed2)
  }
