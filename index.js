@@ -6,7 +6,7 @@ const snekfetch = require('snekfetch');
 const talkedRecently = new Set();
 const token = process.env.BOT_TOKEN; //Replace with token if self hosting
 const client = new Discord.Client();
-const config = require('../Data/config.json');
+const config = require('../data/config.json');
 client.config = config;
 
 
