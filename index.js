@@ -50,6 +50,7 @@ client.on('message', message => {
 
 	const [, matchedPrefix] = message.content.match(prefixRegex);
 	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+        const prefix = ['nb/'];
 	const command = args.shift();
 
 	if (command === 'ping') {
