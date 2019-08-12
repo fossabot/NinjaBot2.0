@@ -18,6 +18,8 @@ exports.run = async (client, message, args) => {
 const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 let prefix = (`nb/`)
 
+const prefixes = ['nb/', `<@!?${client.user.id}> `];
+
 client.on('message', message => {
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
 	if (!prefixRegex.test(message.content)) return;
