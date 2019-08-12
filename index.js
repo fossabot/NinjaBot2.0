@@ -40,20 +40,6 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-//This function allows the bot to respond to @mention for commands
-//Here this code is only Executed for "prefix" but you will find this code in all the commands.
-let id = (595155471611068426)
-const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-const prefixes = ['nb/', <@!?${client.user.id}> ];
-
-client.on('message', message => {
-	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
-	if (!prefixRegex.test(message.content)) return;
-
-	const [, matchedPrefix] = message.content.match(prefixRegex);
-	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-	const command = args.shift();
-
 //Stops the bot from responding to other bots.
 client.on('message', message => {
   if(message.author.bot) return;
@@ -85,5 +71,4 @@ Music.start(client, {
   disableLoop: false        // Disable the loop command.
   });
 
-});
 client.login(process.env.BOT_TOKEN); //process.env.BOT_TOKEN Allows the token to be defined and set via the bots database to ensure it is never public!
