@@ -1,5 +1,6 @@
 //This is the bots required node modules, certain aspects of the code will not work without this.
 const Discord = require('discord.js');
+const snekfetch = require ('snekfetch');
 
 //This SHOULD allow us to use the "client, message & args" async functions.(Example: message.author.id)
 exports.run = (client, message, args) => {
