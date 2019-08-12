@@ -40,12 +40,29 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-//This function should allow the bot to respond to @mention for commands (broken)
-//client.on('message', message => {
-//  const prefixMention = new RegExp(`^<@!?${client.user.id}> `);
-//    const prefix = message.content.match(prefixMention) ? message.content.match(prefixMention)[0] : '!';
+//This function should allow the bot to respond to @mention for commands
+const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-//});
+client.on('message', message => {
+	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+	if (!prefixRegex.test(message.content)) return;
+
+	const [, matchedPrefix] = message.content.match(prefixRegex);
+	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+	const command = args.shift();
+
+	if (command === 'prefix') {
+		message.reply(`you can either ping me or use \`${prefix}\` as my prefix.`);
+	}
+
+client.on('message', message => {
+	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+	if (!prefixRegex.test(message.content)) return;
+
+	const [, matchedPrefix] = message.content.match(prefixRegex);
+	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+	const command = args.shift();
+});
 
 //Stops the bot from responding to other bots.
 client.on('message', message => {
