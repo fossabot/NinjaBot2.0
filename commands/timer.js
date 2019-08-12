@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
    .setFooter(`© Ninja Bot v1.00`);   
     return message.channel.send(tEmbed1);
   
-  message.channel.send(":white_check_mark: " + "| Timer Started for: " + `${ms(ms(Timer), {long: true})}`)
+  message.channel.send(":white_check_mark: " + "| Timer Started for: " + `${ms(ms(Timer), {long: true})}`);
 
   setTimeout(function(){
 let tEmbed4 = new Discord.RichEmbed()
@@ -50,3 +50,4 @@ exports.help = {
     description: 'Create a timer.',
     usage: 'timer'
   };
+}
