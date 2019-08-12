@@ -42,7 +42,7 @@ client.commands = new Enmap();
 
 client.on('message', message => {
         const prefix = ['nb/'];
-        const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const escapeRegex = string => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
 	if (!prefixRegex.test(message.content)) return;
 
