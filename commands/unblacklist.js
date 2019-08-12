@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require('fs');
-const customisation = require('../customisation.json');
-const settings = require('../settings.json')
+const customisation = require('../data/customisation.json');
+const settings = require('../data/settings.json')
 
 exports.run = async (client, message, args) => {
     let blacklist = JSON.parse(fs.readFileSync("./blacklist.json", "utf8"));
