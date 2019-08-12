@@ -23,6 +23,7 @@ exports.run = async (client, message, args) => {
    .addField("Current Version", "``v1.00``")
    .addField("Author", `Created By: ${owner}`)
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/yFmtAUM)")
-   message.channel.send(aEmbed)
- }
+   message.channel.send(aEmbed).then(sentMessage => {
+	sentMessage.react('👍');
+});
 	
