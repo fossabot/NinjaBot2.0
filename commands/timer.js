@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
    .setTitle("Ninja Bot Timer")
    .setDescription("Starts a timer based on the time given")
    .setColor("#0x3dfbff")
-   .addField("":x: " + "| Please Enter a time period followed by \"s or m or h\"");
+   .addField(":x: " + "| Please Enter a time period followed by \"s or m or h\"");
    .setFooter(`© Ninja Bot v1.00`);   
    message.channel.send(tEmbed)
     return message.channel.send(tEmbed)
@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
    .setTitle("Ninja Bot Timer")
    .setDescription("Starts a timer based on the time given")
    .setColor("#0x3dfbff")
-   .addField("":x: " + "| Please Enter a time period followed by \"s or m or h\"");
+   .addField(":x: " + "| Please Enter a time period followed by \"s or m or h\"");
    .setFooter(`© Ninja Bot v1.00`);   
     return message.channel.send(tEmbed1);
   }
