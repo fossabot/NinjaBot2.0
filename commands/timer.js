@@ -23,15 +23,8 @@ module.exports.run = async (bot, message, args) => {
    .addField(":x: " + "| Please Enter a time period followed by \"s or m or h\"")
    .setFooter(`© Ninja Bot v1.00`);   
     return message.channel.send(tEmbed1);
-  }
-
-let tEmbed3 = new Discord.RichEmbed()
-   .setTitle("Ninja Bot Timer")
-   .setDescription("Starts a timer based on the time given")
-   .setColor("#0x3dfbff")
-   .addField(":white_check_mark: " + "| Timer Started for: " + `${ms(ms(Timer), {long: true})}`)
-   .setFooter(`© Ninja Bot v1.00`);  
-  message.channel.send(tEmbed3)
+  
+  message.channel.send(":white_check_mark: " + "| Timer Started for: " + `${ms(ms(Timer), {long: true})}`)
 
   setTimeout(function(){
 let tEmbed4 = new Discord.RichEmbed()
