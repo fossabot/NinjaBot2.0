@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const customisation = require('../data/customisation.json');
+const client = new Discord.Client({
 
 //This function allows the bot to respond to @mention for commands
 //Here this code is only Executed for "prefix" but you will find this code in all the commands.
