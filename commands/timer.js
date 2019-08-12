@@ -56,4 +56,4 @@ exports.help = {
     name: 'timer',
     description: 'Create a timer.',
     usage: 'timer'
-  };
+  }
