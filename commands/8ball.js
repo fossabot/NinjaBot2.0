@@ -61,5 +61,4 @@ exports.help = {
     description: 'Ask the bot a Question.',
     usage: '8ball (question)'
   };
-})
 
