@@ -12,8 +12,22 @@ const owner = config.ownerID
 
 //This SHOULD allow us to use the "client, message & args" async functions.(Example: message.author.id)
 exports.run = async (client, message, args) => {
+
+//This function allows the bot to respond to @mention for commands
+//Here this code is only Executed for "prefix" but you will find this code in all the commands.
+const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+let prefix = ('nb/');
+
+client.on('message', message => {
+	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+	if (!prefixRegex.test(message.content)) return;
+
+	const [, matchedPrefix] = message.content.match(prefixRegex);
+	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+	const command = args.shift();
 	
 //This is your Command or Discord Rich Embed code Line followed by the end of the command. OR close "}" bracket	
+if (command === 'about') {
 let owner = client.users.get('444609097233465347');
    message.delete().catch();
    let aEmbed = new Discord.RichEmbed()
