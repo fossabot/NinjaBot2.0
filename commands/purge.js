@@ -20,11 +20,6 @@ message.delete().catch();
 
         message.channel.fetchMessages({limit: Math.min(messagecount + 1, 1000)}).then(messages => {
             messages.forEach(m => {
-
-                if (!deletedMessages === -1);
-                return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
-                }
-
                 if (message.author.id == client.user.id) {
                     message.delete().catch(console.error);
                     deletedMessages++;
