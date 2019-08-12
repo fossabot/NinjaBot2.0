@@ -26,6 +26,7 @@ client.on('message', message => {
 	const command = args.shift();
  
 exports.run = async (bot, message, args) => {
+if (command === 'ping') {
     if(!args[2]) return message.reply("Please ask a full question");
     let replies = [
         'Maybe.',
