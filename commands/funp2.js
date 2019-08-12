@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
 //This is your Command or Discord Rich Embed code Line followed by the end of the command. OR close "}" bracket
  message.delete().catch();	 
    let hEmbed = new Discord.RichEmbed()
-   .setTitle("Ninja Bot Moderator Commands")
+   .setTitle("Ninja Bot Fun Commands Page 2")
    .setDescription(`<@${message.author.id}>` + "Below is a list of my commands and their usage.")
    .setColor("#0x3dfbff")
    .addBlankField()
