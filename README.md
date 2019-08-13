@@ -1,4 +1,5 @@
-[![Build Passing](https://img.shields.io/badge/build-Passing%20-green.svg?style=flat)](https://github.com/GrimDesignsFiveM/NinjaBot2.0/) [![Status Online](https://img.shields.io/badge/status-Online%20-brightgreen.svg?style=flat)](https://github.com/GrimDesignsFiveM/NinjaBot2.0/) [![Bot Code Library](https://img.shields.io/badge/code-discord.js-yellowgreen.svg)](https://discord.js.org/#/) 
+[![Build Passing](https://img.shields.io/badge/build-Passing%20-green.svg?style=flat)](https://github.com/GrimDesignsFiveM/NinjaBot2.0/) [![Status Online](https://img.shields.io/badge/status-Online%20-brightgreen.svg?style=flat)](https://github.com/GrimDesignsFiveM/NinjaBot2.0/) [![Bot Code Library](https://img.shields.io/badge/code-discord.js-yellowgreen.svg)](https://discord.js.org/#/) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrimDesignsFiveM%2FNinjaBot2.0.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrimDesignsFiveM%2FNinjaBot2.0?ref=badge_shield)
+
 
 ### Ninja Bot 2.0
 A moderation and support bot written in Discord.JS
@@ -55,3 +56,7 @@ Below is a list of Ninja Bot's commands including a description of what they do 
 |[nb/ban]  | Bans mentioned user |
 |[nb/purge]| Deletes provided amount of messages |
 |[nb/removerole @User @Role] | Removes the mentioned role from the mentioned user  |
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGrimDesignsFiveM%2FNinjaBot2.0.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FGrimDesignsFiveM%2FNinjaBot2.0?ref=badge_large)
