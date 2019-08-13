@@ -41,3 +41,4 @@ message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
  });
 })
+}
