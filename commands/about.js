@@ -25,5 +25,8 @@ let owner = client.users.get('444609097233465347');
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/yFmtAUM)")
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
+
+if (message.author.id.reacts).then(msg => { msg.delete(10000)
+
  });
 }
