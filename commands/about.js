@@ -26,12 +26,17 @@ let owner = client.users.get('444609097233465347');
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
 
-        let react = ('👍')
-        let name = ('👍')
+ const filter = (reaction, user) => {
+	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+};
 
-     if (sentMessage.react.emoji.name === '👍') {
-       message.reply('you reacted with a thumbs up.');
-   } 
+message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '👍') {
+			message.reply('you reacted with a thumbs up.');
+		} 
  
 
  });
