@@ -28,7 +28,7 @@ let owner = client.users.get('444609097233465347');
 
         let react = ('👍')
 
-     if (react.emoji.name === '👍') {
+     if (sentMessage.react.emoji.name === '👍') {
        message.reply('you reacted with a thumbs up.');
    } 
  
