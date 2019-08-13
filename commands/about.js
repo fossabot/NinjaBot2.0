@@ -26,8 +26,10 @@ let owner = client.users.get('444609097233465347');
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
 
- const filter = (reaction, user) => {
-	return ['👍'].includes(reaction.emoji.name) && user.id === message.author.id;
+ message.react('👍').then(() => message.react('❌'));
+
+const filter = (reaction, user) => {
+	return ['👍', '❌'].includes(reaction.emoji.name) && user.id === message.author.id;
 };
 
 message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
@@ -35,13 +37,11 @@ message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 		const reaction = collected.first();
 
 		if (reaction.emoji.name === '👍') {
-			message.delete(10000);
-		} 
-    .catch(collected => {
-		console.log("Message deleted")
+			message.reply('you reacted with a thumbs up.');
+		} else {
+			message.reply('you reacted with a thumbs down.');
+		}
+	})
+	.catch(collected => {
+		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
 	});
- 
-
- });
-})
-}
