@@ -26,9 +26,10 @@ let owner = client.users.get('444609097233465347');
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
 
-if (message.author.id.reacts)
-  sentMessage.delete(10000);
-}
+     if (reaction.emoji.name === '👍') {
+       message.reply('you reacted with a thumbs up.');
+   } 
+ 
 
  });
 }
