@@ -27,7 +27,7 @@ let owner = client.users.get('444609097233465347');
 	sentMessage.react('👍');
 
  const filter = (reaction, user) => {
-	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+	return ['👍'].includes(reaction.emoji.name) && user.id === message.author.id;
 };
 
 message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
@@ -37,6 +37,9 @@ message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 		if (reaction.emoji.name === '👍') {
 			message.delete(10000);
 		} 
+    .catch(collected => {
+		console.log("Message deleted")
+	});
  
 
  });
