@@ -28,6 +28,13 @@ client.on("guildDelete", guild => {
   client.user.setGame(`nb/help in ${client.guilds.size} Servers`, `https://www.twitch.tv/monstercat`);
 });
 
+client.on('message', async message => {
+    if (message.channel.type == 'dm') {
+        message.reply("You are DMing me now!");
+      return;
+   }
+});
+
 //Allows the bot to log and show events (Joining New Servers)
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
