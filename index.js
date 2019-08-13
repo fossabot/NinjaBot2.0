@@ -45,10 +45,11 @@ client.on('message', message => {
   if(message.author.bot) return;
 })
 
-client.on('message', async message => {
-    if (message.channel.type == 'dm') {
-        message.channel.send("You are DMing me now!? :face_palm:");
-    }
+client.on('message', msg => {
+  if (message.channel.type == "dm") {
+    message.author.send("You are DMing me now!");
+    return;
+  }
 });
 
 //This code line allows the commands to be individual/seperate files
