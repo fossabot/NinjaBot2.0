@@ -26,7 +26,7 @@ let owner = client.users.get('444609097233465347');
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
 
-     if (reaction.emoji.name === '👍') {
+     if (react.emoji.name === '👍') {
        message.reply('you reacted with a thumbs up.');
    } 
  
