@@ -26,8 +26,8 @@ let owner = client.users.get('444609097233465347');
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
 
-if (message.author.id.reacts).then(sentMessage => { 
-  sentMessage.delete(10000)
+if (message.author.id.reacts).then(sentMessage => {
+  sentMessage.delete(10000);
 }
 
  });
