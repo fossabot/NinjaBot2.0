@@ -35,7 +35,7 @@ message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 		const reaction = collected.first();
 
 		if (reaction.emoji.name === '👍') {
-			message.reply('you reacted with a thumbs up.');
+			message.delete(10000);
 		} 
  
 
