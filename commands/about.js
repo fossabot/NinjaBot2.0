@@ -25,20 +25,5 @@ let owner = client.users.get('444609097233465347');
    .addField("Ninja Bot Support", "[Support Server](https://discord.gg/yFmtAUM)")
    message.channel.send(aEmbed).then(sentMessage => {
 	sentMessage.react('👍');
-
-const filter = (reaction, user) => {
-	return ['👍'].includes(reaction.emoji.name) && user.id === message.author.id;
-};
-
-message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-	.then(collected => {
-		const reaction = collected.first();
-
-		if (reaction.emoji.name === '👍') {
-			message.reply('you reacted with a thumbs up.');
-		}
-	.catch(collected => {
-		message.delete(2000);
-	});
-  });
+ });
 }
