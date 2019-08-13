@@ -36,12 +36,9 @@ message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 
 		if (reaction.emoji.name === '👍') {
 			message.reply('you reacted with a thumbs up.');
-		} else {
-			message.delete(6000);
 		}
-	})
 	.catch(collected => {
-		message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+		message.delete(2000);
 	});
   });
 }
