@@ -47,7 +47,7 @@ client.on('message', message => {
 
 client.on('message', async message => {
     if (message.channel.type == 'dm') {
-        message.reply("You are DMing me now!? :face_palm:");
+        message.channel.send("You are DMing me now!? :face_palm:");
     }
 });
 
