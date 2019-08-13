@@ -45,6 +45,12 @@ client.on('message', message => {
   if(message.author.bot) return;
 })
 
+client.on('message', async message => {
+    if (message.channel.type == 'dm') {
+        message.reply("You are DMing me now!? :face_palm:");
+    }
+});
+
 //This code line allows the commands to be individual/seperate files
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
